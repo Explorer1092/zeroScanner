@@ -1,0 +1,5 @@
+#info keyword[...]
+{info="IBM Integrated Management Module"}{keyword="designs/imm/index.php"}
+{info="IBM Integrated Management Module"}{keyword="imm/login.css"}
+{info="BIG-IP"}{keyword="BIG-IP&reg;- Redirect"}
+{info="BIG-IP"}{keyword="/tmui/tmui/system/settings/redirect.jsp"}

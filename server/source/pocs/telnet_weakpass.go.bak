@@ -1,0 +1,62 @@
+/*
+host
+*/
+package main
+
+import (
+	"fmt"
+	"net/url"
+	"time"
+
+	"zeroScannerGo/engine"
+	"zeroScannerGo/engine/lib/telnet"
+)
+
+var (
+	userMatch  = []string{"login", "user", "username"}
+	passMatch  = []string{"password", "pass"}
+	loginMatch = []string{"#", "$", ">"}
+)
+
+func Verify(params engine.Params) (result engine.Result) {
+	timeout := 5 * time.Second
+
+	host := params.ParsedTarget.Hostname()
+	if params.Hosts != "" {
+		host = params.Hosts
+	}
+	port := params.ParsedTarget.Port()
+	if port == "" {
+		port = "23"
+	}
+	params.ParsedTarget.Host = host + ":" + port
+
+	t, err := telnet.DialTimeout("tcp", params.ParsedTarget.Host, time.Second*5)
+	if err != nil {
+		return
+	}
+	t.SetDeadline(time.Now().Add(timeout))
+
+	info, err := t.ReadSome()
+	//	info, err := t.ReadUntil(userMatch...)
+	if err != nil {
+		return
+	}
+
+	fmt.Println(string(info))
+	return
+
+}
+
+func main() {
+	params := engine.Params{}
+	params.Username = "root"
+	params.Password = "123456"
+	params.Method = "GET"
+	params.Target = "http://116.58.209.41/"
+	parsedTarget, _ := url.Parse(params.Target)
+	params.ParsedTarget = *parsedTarget
+
+	result := Verify(params)
+	fmt.Printf("%+v\r\n", result)
+}

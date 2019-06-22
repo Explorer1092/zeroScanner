@@ -1,0 +1,33 @@
+agent_token = "agentDownloadSecret"
+api_token = "token"
+worker_num = 100
+api_port = 80
+redis_url = "redis://127.0.0.1:6379/0"
+mongo_url = "mongodb://127.0.0.1:27017/zero"
+db_file = "zero.db"
+
+[log]
+  level = "debug"
+  file = ""
+
+[zookeeper]
+  server = "127.0.0.1:2181"
+  topics = ["scanner_url_filter"]
+
+[source_api]
+  [source_api.app]
+    url = "http://sea.jd.com/api/v2/app"
+    auth_id = "buiTayt1KQd1"
+    auth_key = "c8b93f17fae54dfa3d16c3b6a62d0289"
+  [source_api.domain]
+    url = "http://sea.jd.com/api/v2/domain"
+    auth_id = "TA3HCmaoncLO"
+    auth_key = "381aaf9a0b4bcd03dae7a53deb9ff832"
+  [source_api.ip]
+    url = "http://sea.jd.com/api/v2/ip"
+    auth_id = "uxNKTlRTueSC"
+    auth_key = "f2ae18af659bb674859a8ab2d87a3d64"
+  [source_api.port]
+    url = "http://sea.jd.com/api/v2/port"
+    auth_id = "i4gWwwtYDpvT"
+    auth_key = "f01a4903711358f4716513c7db47dfc3"
