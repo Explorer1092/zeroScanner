@@ -10,6 +10,8 @@ require (
 	github.com/go-sql-driver/mysql v1.4.1
 	github.com/golang-collections/collections v0.0.0-20130729185459-604e922904d3
 	github.com/mattn/go-sqlite3 v1.10.0
+	github.com/onsi/ginkgo v1.8.0 // indirect
+	github.com/onsi/gomega v1.5.0 // indirect
 	github.com/robertkrimen/otto v0.0.0-20180617131154-15f95af6e78d
 	github.com/tidwall/gjson v1.2.1
 	github.com/tidwall/match v1.0.1 // indirect
